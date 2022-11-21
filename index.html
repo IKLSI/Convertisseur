@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Convertisseur Décimal Hexadecimal Binaire</title>
+        <meta name="author" content="Kyliann 'KLS'"/>
+    </head>
+    <body>
+        <style>
+            body {
+                text-align: center;
+                font-size: 20px;
+                font-weight: bold;
+                color: antiquewhite;
+                background: url("https://controlpartner.no/wp-content/uploads/2020/11/serverpark-1-scaled.jpg");
+                background-size: cover;
+            }
+
+            form {
+                margin-top: 18%;
+            }
+
+            h1 {
+                -webkit-text-fill-color: transparent;
+                background: #121FCF;
+                background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+                -webkit-background-clip: text;
+                margin-top: 5%;
+            }
+
+            input {
+                text-align: center;
+                font-weight: bold;
+            }
+        </style>
+        <h1>Convertisseur Décimal Hexadécimal et Binaire</h1>
+        <form action="">
+            <p>
+                <label for="decimal">Décimal :</label>
+                <input type="text" id="decimal" name="decimal" />
+                <input type="button" name="submit1" value="&#8674;" onClick="xdecimal();"/>
+            </p>
+            <p>
+                <label for="hexadecimal">Hexadécimal :</label>
+                <input type="text" id="hexadecimal" name="hexadecimal"/>
+                <input type="button" name="submit2" value="&#8674;" onClick="xhexadecimal();"/>
+            </p>
+            <p>
+                <label for="hexadecimal">Binaire :</label>
+                <input type="text" id="binaire" name="binaire"/>
+                <input type="button" name="submit3" value="&#8674;" onClick="xbinaire();"/>
+            </p>
+        </form>
+        <script type="text/javascript">
+            function xdecimal()
+            {
+                decimal = document.getElementById("decimal");
+                hexadecimal = document.getElementById("hexadecimal");
+                binaire = document.getElementById("binaire");
+                hexadecimal.value = (decimal.value-0).toString(16);
+                binaire.value = (decimal.value-0).toString(2);
+            }
+            function xhexadecimal()
+            {
+                decimal = document.getElementById("decimal");
+                hexadecimal = document.getElementById("hexadecimal");
+                binaire = document.getElementById("binaire");
+                decimal.value = parseInt(hexadecimal.value,16);
+                binaire.value = (parseInt(hexadecimal.value,16)).toString(2);
+            }
+            function xbinaire()
+            {
+                decimal = document.getElementById("decimal");
+                hexadecimal = document.getElementById("hexadecimal");
+                binaire = document.getElementById("binaire");
+                decimal.value = parseInt(binaire.value,2);
+                hexadecimal.value = (parseInt(binaire.value,2)).toString(16);
+            }
+        </script>
+    </body>
+</html>
